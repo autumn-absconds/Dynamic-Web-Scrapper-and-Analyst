@@ -8,11 +8,9 @@ const { PromptTemplate } = require("langchain/prompts");
 const { LLMChain } = require("langchain/chains");
 const { Document } = require("langchain/document");
 const { CharacterTextSplitter } = require("langchain/text_splitter");
+const dotenv = require('dotenv').config();
 
 
-
-
-OPENAI_API_KEY = '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'
 
 const getRequest = async (req, res) => {
     const loader = new PuppeteerWebBaseLoader("https://www.rottentomatoes.com/browse/movies_at_home/sort:popular");
@@ -37,7 +35,7 @@ const getRequest = async (req, res) => {
         const model = new OpenAI({
             modelName: "gpt-3.5-turbo", // Defaults to "text-davinci-003" if no model provided.
             temperature: 0.9,
-            openAIApiKey: "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", // In Node.js defaults to process.env.OPENAI_API_KEY
+            openAIApiKey: process.env.API_KEY            , // In Node.js defaults to process.env.OPENAI_API_KEY
         });
         const prompt = PromptTemplate.fromTemplate(
             `You are a very experienced and senior  web scrapper . You ned to extract movies title,year,rating and any other info regarding movie -  $(prompt)?.
