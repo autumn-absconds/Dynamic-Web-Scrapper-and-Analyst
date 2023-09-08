@@ -3,6 +3,10 @@
 
 This project combines web scraping and AI text generation techniques to extract movie titles, years, ratings, and other information from a web page using Puppeteer and then generating additional text with OpenAI's GPT-3.5 Turbo.
 
+## Main Points :-
+:- To run it seperately , get the code from the requests file (from the get request) as this is the demo verison of API.<br>
+:- Adjust the tokens as per needs as OPEN API if free version is being used then it may gie error for Run time limit.
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Technologies Used](#technologies-used)
